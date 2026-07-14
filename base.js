@@ -128,7 +128,8 @@ function initSponsorsTicker() {
   `).join('');
 
   list.innerHTML = html;
-  list.innerHTML += html; // Duplicate for seamless loop
+  list.innerHTML += html;
+  list.innerHTML += html; // Triple for seamless loop
 }
 
 // Initialize
