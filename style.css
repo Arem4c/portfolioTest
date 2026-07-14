@@ -255,6 +255,67 @@ ul {
     transition: 0.3s ease;
 }
 
+/* Mobile nav */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(16px);
+        padding: 100px 40px 40px;
+        transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        z-index: 1000;
+        border-left: 1px solid rgba(230, 57, 70, 0.15);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav__list a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .nav__list a:hover,
+    .nav__list a.active {
+        background: rgba(230, 57, 70, 0.1);
+        color: var(--red);
+    }
+
+    .nav__list a::after {
+        display: none;
+    }
+
+    /* Burger animation */
+    .burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
 /* ========================================
    HERO — F1 MOVIE STYLE (Fullscreen Car)
    ======================================== */
