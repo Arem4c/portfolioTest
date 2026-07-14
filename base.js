@@ -142,30 +142,58 @@ document.addEventListener('DOMContentLoaded', initSponsorsTicker);
 
 const heroContent = document.querySelector('.hero__content');
 const heroHotspots = document.querySelectorAll('.hero__hotspots .car-hotspot');
+const hotspotPanel = document.getElementById('hotspotPanel');
+const hotspotTitle = document.getElementById('hotspotTitle');
+const hotspotDesc = document.getElementById('hotspotDesc');
+const hotspotClose = document.getElementById('hotspotClose');
 
-if (heroContent && heroHotspots.length) {
-  const originalHTML = heroContent.innerHTML;
-  
-  heroHotspots.forEach(hotspot => {
+if (heroHotspots.length && hotspotPanel) {
+  let activeHotspot = null;
+
+  function openPanel(hotspot) {
     const title = hotspot.dataset.title || '';
     const desc = hotspot.dataset.desc || '';
-    
-    hotspot.addEventListener('mouseenter', function() {
-      heroContent.innerHTML = `
-        <div class="hero__badge">
-          <i class="fas fa-flag-checkered"></i> F1® THE MOVIE — В кино с 25 июня 2025
-        </div>
-        <h1 class="hero__title">
-          <span class="highlight" style="color: var(--red);">${title}</span>
-        </h1>
-        <p class="hero__text">${desc}</p>
-      `;
-      heroContent.classList.add('hero__content--hovered');
+    hotspotTitle.textContent = title;
+    hotspotDesc.textContent = desc;
+    hotspotPanel.classList.add('open');
+  }
+
+  function closePanel() {
+    hotspotPanel.classList.remove('open');
+    if (activeHotspot) {
+      activeHotspot.classList.remove('active');
+      activeHotspot = null;
+    }
+  }
+
+  heroHotspots.forEach(hotspot => {
+    hotspot.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (activeHotspot === this) {
+        closePanel();
+        return;
+      }
+      if (activeHotspot) {
+        activeHotspot.classList.remove('active');
+      }
+      this.classList.add('active');
+      activeHotspot = this;
+      openPanel(this);
     });
-    
-    hotspot.addEventListener('mouseleave', function() {
-      heroContent.innerHTML = originalHTML;
-      heroContent.classList.remove('hero__content--hovered');
+  });
+
+  if (hotspotClose) {
+    hotspotClose.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closePanel();
     });
+  }
+
+  document.addEventListener('click', function () {
+    closePanel();
+  });
+
+  hotspotPanel.addEventListener('click', function (e) {
+    e.stopPropagation();
   });
 }

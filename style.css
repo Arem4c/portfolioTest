@@ -379,8 +379,8 @@ ul {
 
 .car-hotspot {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 10;
@@ -391,13 +391,25 @@ ul {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background: var(--red);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: hotspot-pulse 2s ease-out infinite;
     box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.6);
+}
+
+.car-hotspot::after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    z-index: 2;
 }
 
 @keyframes hotspot-pulse {
@@ -415,32 +427,92 @@ ul {
     }
 }
 
-.car-hotspot:hover::before {
+.car-hotspot.active::before {
     animation: none;
     transform: translate(-50%, -50%) scale(1.5);
     box-shadow: 0 0 20px rgba(230, 57, 70, 0.8);
 }
 
-/* Hero content hover state */
-.hero__content--hovered .hero__title {
-    font-size: clamp(36px, 6vw, 64px);
-    line-height: 1.15;
+/* Hotspot Info Panel */
+.hotspot-panel {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(120%);
+    width: 360px;
+    max-width: 90vw;
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    z-index: 20;
+    backdrop-filter: blur(12px);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-.hero__content--hovered .hero__title .highlight {
+.hotspot-panel.open {
+    transform: translateY(-50%) translateX(0);
+}
+
+.hotspot-panel__close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.hotspot-panel__close:hover {
+    background: var(--red);
+    color: #fff;
+}
+
+.hotspot-panel__body {
+    padding-left: 4px;
+}
+
+.hotspot-panel__title {
+    font-size: 16px;
+    font-weight: 700;
     color: var(--red);
+    margin: 0 0 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-.hero__content--hovered .hero__title .highlight::after {
-    display: block;
-    opacity: 0.25;
+.hotspot-panel__desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
 }
 
-.hero__content--hovered .hero__text {
-    font-size: clamp(16px, 2vw, 20px);
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 700px;
-    margin-bottom: 0;
+/* Mobile hotspot panel */
+@media (max-width: 768px) {
+    .hotspot-panel {
+        right: 50%;
+        top: auto;
+        bottom: 10px;
+        transform: translateX(50%) translateY(120%);
+        width: calc(100% - 20px);
+        max-width: none;
+        padding: 24px 20px 20px;
+    }
+
+    .hotspot-panel.open {
+        transform: translateX(50%) translateY(0);
+    }
 }
 
 /* ========================================
