@@ -628,17 +628,11 @@ ul {
     gap: 60px;
     align-items: center;
     white-space: nowrap;
-    animation: scroll-sponsors 20s linear infinite;
     will-change: transform;
 }
 
-.sponsors-track:hover .sponsors-list {
+.sponsors-track.paused .sponsors-list {
     animation-play-state: paused;
-}
-
-@keyframes scroll-sponsors {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.33%); }
 }
 
 .sponsor-item {

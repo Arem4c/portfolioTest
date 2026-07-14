@@ -118,7 +118,8 @@ const F1_SPONSORS = [
 
 function initSponsorsTicker() {
   const list = document.getElementById('sponsorsList');
-  if (!list) return;
+  const track = document.querySelector('.sponsors-track');
+  if (!list || !track) return;
 
   const html = F1_SPONSORS.map(sponsor => `
     <div class="sponsor-item" title="${sponsor.name}">
@@ -127,9 +128,37 @@ function initSponsorsTicker() {
     </div>
   `).join('');
 
-  list.innerHTML = html;
-  list.innerHTML += html;
-  list.innerHTML += html; // Triple for seamless loop
+  list.innerHTML = html + html; // Two copies for seamless loop
+
+  let position = 0;
+  let paused = false;
+  let then = performance.now();
+  const SPEED = 0.04; // pixels per ms
+
+  function getSetWidth() {
+    const items = list.children;
+    if (items.length < 2) return 0;
+    return items[items.length / 2].offsetLeft;
+  }
+
+  function tick(now) {
+    if (!paused) {
+      const delta = (now - then) * SPEED;
+      position -= delta;
+      const setWidth = getSetWidth();
+      if (setWidth > 0 && position <= -setWidth) {
+        position += setWidth;
+      }
+      list.style.transform = `translateX(${position}px)`;
+    }
+    then = now;
+    requestAnimationFrame(tick);
+  }
+
+  track.addEventListener('mouseenter', () => { paused = true; });
+  track.addEventListener('mouseleave', () => { paused = false; then = performance.now(); });
+
+  requestAnimationFrame(tick);
 }
 
 // Initialize
