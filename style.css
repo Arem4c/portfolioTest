@@ -347,6 +347,12 @@ ul {
     filter: brightness(0.55) contrast(1.1);
 }
 
+@media (max-width: 768px) {
+    .hero__bg img {
+        filter: brightness(0.7) contrast(1.1);
+    }
+}
+
 .hero__bg::after {
     content: '';
     position: absolute;
