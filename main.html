@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1® THE MOVIE — Официальный сайт</title>
+    
+    <link rel="icon" type="image/png" href="imgs/logof1.png" />
+    
+    <!-- Подключаем шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ========================================
+    ХЕДЕР (закреплен сверху)
+    ======================================== -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            
+            <!-- Логотип -->
+            <a href="#" class="logo">
+                <img src="imgs/logof1.png" alt="F1 Logo" class="logo__img" />
+            </a>
+
+            <!-- Навигация -->
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#about" class="active">О Фильме</a></li>
+                    <li><a href="#plot">Сюжет</a></li>
+                    <li><a href="#cast">Состав актеров</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <!-- Бургер-меню (для телефонов и планшетов) -->
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- ========================================
+    СЕКЦИЯ 1: ГЕРОЙ (Главный экран) - F1 MOVIE
+    ======================================== -->
+    <section class="hero" id="about">
+        <div class="hero__bg">
+            <img src="imgs/car2.jpg" alt="F1 Movie Car" class="hero__bg-img" />
+            <div class="hero__overlay"></div>
+        </div>
+        
+        <div class="container hero__inner">
+            
+            <!-- Левая часть: текст -->
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <i class="fas fa-flag-checkered"></i> F1® THE MOVIE — В кино с 25 июня 2025
+                </div>
+
+                <h1 class="hero__title">
+                    BRAD PITT <br />
+                    <span>ВСЕРЁВШИЙ</span> <br />
+                    <span class="highlight">В ФОРМУЛУ-1</span>
+                </h1>
+
+                <p class="hero__text">
+                    Сёни Маккуин возвращается в Гран-при, чтобы научить юного товарища по команде APX GP 
+                    <strong>побеждать на пределе</strong>
+                </p>
+
+                <div class="hero__buttons">
+                    <a href="https://tv.apple.com/us/info/f1-the-movie" class="btn btn--red" target="_blank" rel="noopener">Смотреть трейлер</a>
+                    <a href="#cast" class="btn btn--outline">Состав актеров</a>
+                </div>
+            </div>
+
+            <!-- Интерактивные хотспоты на машине (поверх фона) -->
+            <div class="hero__hotspots">
+                <div class="car-hotspot" data-part="halo" style="top: 30%; left: 48%;" data-title="Хейло (Halo)" data-desc="Титановая защитная арка над кокпитом. Выдерживает нагрузку 12 тонн — вес двух автобусов. В фильме IWC брендируется как спонсор хейло у APX GP."></div>
+                <div class="car-hotspot" data-part="engine" style="top: 48%; left: 62%;" data-title="Силовая установка Mercedes" data-desc="1.6L V6 Turbo Hybrid — 1000+ л.с. ERS: MGU-K (кинетика) + MGU-H (тепло турбины). Режим QUALI даёт +50 кВт на круг."></div>
+                <div class="car-hotspot" data-part="rear-wing" style="top: 12%; left: 82%;" data-title="Заднее крыло + DRS" data-desc="Двухплановое крыло с системой DRS (Drag Reduction System). При открывании верхний плашме улучшается сопротивление — +25 км/ч на прямой. Mercedes AMG — технический партнёр."></div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- Спонсорская лента -->
+    <section class="sponsors-ticker" aria-label="Официальные партнеры фильма F1">
+        <div class="sponsors-track">
+            <div class="sponsors-list" id="sponsorsList">
+                <!-- Заполнится через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+    СЕКЦИЯ 2: СЮЖЕТ ФИЛЬМА
+    ======================================== -->
+    <section class="section section--plot" id="plot">
+        <div class="container">
+            <span class="plot__section-badge">СЮЖЕТ</span>
+            <div class="plot__inner">
+                
+                <!-- Левая часть: картинка -->
+                <div class="plot__image">
+                    <img src="imgs/car3.png" alt="F1 Movie - Brad Pitt as Sonny Hayes" class="plot__img" />
+                </div>
+
+<!-- Правая часть: описание -->
+            <div class="plot__content">
+                <h2 class="section__title">Возвращение <span>легенды</span></h2>
+                    
+                    <div class="plot__text">
+                        <p>Бывший пилот Форумы-1 Сёни Хейес (Брэд Питт) уходит со сцены после страшной аварии в 90-х. Годы спустя он получает шанс на искупление — стать наставником юного таланта АПХ GP, команды-новичка на старте сезона.</p>
+                        <p>Между Гран-при, пит-стопами и политикой паддока Сёни должен научить новичка не просто ездить быстро — а выигрывать. Но прошлое не отпускает, и на кону оказывается не только чемпионат.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+    <!-- ========================================
+    СЕКЦИЯ 3: СОСТАВ АКТЕРОВ
+    ======================================== -->
+    <section class="cast" id="cast">
+        <div class="container">
+            <span class="cast__badge">СОСТАВ АКТЕРОВ</span>
+<div class="cast__inner">
+                
+                <!-- Brad Pitt - Sonny Hayes -->
+                <article class="cast__card">
+                    <img src="imgs/pitt.jpg" alt="Брэд Питт как Сонни Хейз" class="cast__card-img" />
+                    <div class="cast__card-content">
+                        <span class="cast__card-role">Сонни Хейз</span>
+                        <h3 class="cast__card-name">Брэд Питт</h3>
+                        <p class="cast__card-character">Бывший пилот Ф-1, вернувшийся на трассу, чтобы наставлять юного талант</p>
+                    </div>
+                </article>
+
+                <!-- Damson Idris - Joshua Pearce -->
+                <article class="cast__card">
+                    <img src="imgs/idris.jpg" alt="Дамсон Идрис как Джошуа Пирс" class="cast__card-img" />
+                    <div class="cast__card-content">
+                        <span class="cast__card-role">Джошуа Пирс</span>
+                        <h3 class="cast__card-name">Дамсон Идрис</h3>
+                        <p class="cast__card-character">Юный британский пилот, вступающий в команду APX GP</p>
+                    </div>
+                </article>
+
+                <!-- Kerry Condon - Kate McKenna -->
+                <article class="cast__card">
+                    <img src="imgs/kondon.jpg" alt="Керри Кондон как Кейт МакКенна" class="cast__card-img" />
+                    <div class="cast__card-content">
+                        <span class="cast__card-role">Кейт МакКенна</span>
+                        <h3 class="cast__card-name">Керри Кондон</h3>
+                        <p class="cast__card-character">Технический директор APX GP. Единственная женщина в этом руководящем позие в Ф-1</p>
+                    </div>
+                </article>
+
+                <!-- Javier Bardem - Ruben Cervantes -->
+                <article class="cast__card">
+                    <img src="imgs/bardem.jpg" alt="Хавьер Бардем как Рубен Сервантес" class="cast__card-img" />
+                    <div class="cast__card-content">
+                        <span class="cast__card-role">Рубен Сервантес</span>
+                        <h3 class="cast__card-name">Хавьер Бардем</h3>
+                        <p class="cast__card-character">Владелец команды APX GP. Бывший пилот, ставший магнатом гонок</p>
+                    </div>
+                </article>
+
+</div>
+        </div>
+    </section>
+
+    <!-- ========================================
+    СЕКЦИЯ 5: ОТЗЫВЫ
+    ======================================== -->
+    <section class="section section--reviews" id="reviews">
+        <div class="container">
+            <div class="section__head">
+                <h2 class="section__title">Что говорят <span>зрители</span></h2>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Review 1 - 5 stars -->
+                <article class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format" alt="Алексей К." />
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Алексей К.</h4>
+                                <div class="review-card__rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-card__text">
+                        «Невероятное кино! Кошински снова доказал, что он мастер экшена. Сцены в кокпите сняты так, будто ты сам за рулём. Питт гениален в роли ментора с прошлым. Лучший фильм про гонки за последние 20 лет!»
+                    </p>
+                    <div class="review-card__meta">
+                        <span class="review-card__date">15 июня 2025</span>
+                        <span class="review-card__source">IMAX Премьера</span>
+                    </div>
+                </article>
+
+                <!-- Review 2 - 5 stars -->
+                <article class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format" alt="Мария С." />
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Мария С.</h4>
+                                <div class="review-card__rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-card__text">
+                        «Хэмилтон как продюсер почувствовался в каждой детали. Звук двигателей, вибрация подвески, стратегия пит-стопов — всё максимально аутентично. Идрис открытие, играет наравне с Питтом. Обязательно в IMAX!»
+                    </p>
+                    <div class="review-card__meta">
+                        <span class="review-card__date">20 июня 2025</span>
+                        <span class="review-card__source">Kinopoisk</span>
+                    </div>
+                </article>
+
+                <!-- Review 3 - 4.5 stars -->
+                <article class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format" alt="Дмитрий В." />
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Дмитрий В.</h4>
+                                <div class="review-card__rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star half">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-card__text">
+                        «Визуально потрясающе, гонки снимают с дух захватывает. Единственное — в середине чуть тянет сюжет, романтическая линия кажется навязанной. Но финал на Абу-Даби всё компенсирует. 4.5 из 5!»
+                    </p>
+                    <div class="review-card__meta">
+                        <span class="review-card__date">22 июня 2025</span>
+                        <span class="review-card__source">IMDb</span>
+                    </div>
+                </article>
+</div>
+        </div>
+    </section>
+
+    <!-- ========================================
+    ФУТЕР (F1 Style)
+    ======================================== -->
+    <footer class="footer" id="contact">
+        <div class="container footer__inner">
+            
+            <!-- Верхний ряд: Логотип + Цитата -->
+            <div class="footer__top-row">
+                <div class="footer__brand">
+                    <a href="#" class="logo logo--footer">
+                        <img src="imgs/logof1.png" alt="F1 Movie" />
+                    </a>
+                </div>
+
+                <blockquote class="footer__quote">
+                    <p>«Я всегда верил в то, что никогда нельзя сдаваться. Нужно продолжать сражаться, даже если есть малейший шанс»</p>
+                    <footer>— Михаэль Шумахер</footer>
+                </blockquote>
+            </div>
+
+            <!-- Кнопка по центру -->
+            <div class="footer__cta-row">
+                <a href="https://www.apple.com/apple-tv-plus/" class="footer__watch-btn" target="_blank" rel="noopener">
+                    <i class="fab fa-apple"></i>
+                    Смотреть на Apple TV+
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer__bottom">
+            <div class="container footer__bottom-inner">
+                <p class="footer__copyright">&copy; 2025 Formula One World Championship Limited / Apple Original Films. Все права защищены.</p>
+                <div class="footer__legal">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Progress Car -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+        <div class="scroll-progress__track"></div>
+        <div class="scroll-progress__flag">
+            <div class="scroll-progress__flag-pole"></div>
+            <div class="scroll-progress__flag-banner"></div>
+        </div>
+        <div class="scroll-progress__car" id="scrollProgressCar">
+            <img src="imgs/bottomcar.png" alt="F1 Car" class="scroll-progress__car-img" />
+        </div>
+    </div>
+
+    <!-- ========================================
+    ПОДКЛЮЧАЕМ JAVASCRIPT
+    ======================================== -->
+    <script src="base.js"></script>
+
+</body>
+</html>
