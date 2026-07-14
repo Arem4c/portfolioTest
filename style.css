@@ -506,19 +506,19 @@ ul {
     }
 
     .car-hotspot[data-part="halo"] {
-        top: 28% !important;
+        top: calc(28% + 50px) !important;
         right: 8% !important;
         left: auto !important;
     }
 
     .car-hotspot[data-part="engine"] {
-        top: 48% !important;
+        top: calc(48% + 50px) !important;
         right: 4% !important;
         left: auto !important;
     }
 
     .car-hotspot[data-part="rear-wing"] {
-        top: 14% !important;
+        top: calc(14% + 50px) !important;
         right: 0% !important;
         left: auto !important;
     }
