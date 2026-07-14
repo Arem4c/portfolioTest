@@ -259,6 +259,10 @@ ul {
 @media (max-width: 768px) {
     .burger {
         display: flex;
+        background: rgba(10, 10, 10, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        padding: 10px;
     }
 
     .nav {
