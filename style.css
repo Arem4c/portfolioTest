@@ -564,7 +564,7 @@ ul {
     gap: 60px;
     align-items: center;
     white-space: nowrap;
-    animation: scroll-sponsors 30s linear infinite;
+    animation: scroll-sponsors 20s linear infinite;
     will-change: transform;
 }
 
