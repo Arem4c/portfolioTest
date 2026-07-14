@@ -26,13 +26,35 @@ document.querySelectorAll(".nav__list a").forEach(function (link) {
  */
 
 const header = document.getElementById("header");
+const navLinks = document.querySelectorAll(".nav__list a");
+const sections = document.querySelectorAll("section[id]");
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 50) {
+  const scrollY = window.scrollY;
+
+  // Header background
+  if (scrollY > 50) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
+
+  // Active nav link
+  let current = "";
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    const height = section.offsetHeight;
+    if (scrollY >= top && scrollY < top + height) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
 });
 
 /**
